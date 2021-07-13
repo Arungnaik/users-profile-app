@@ -1,0 +1,10 @@
+div{
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  padding-top:4rem;
+  text-align:center;
+}
+h1,h3{
+  padding: 1rem;
+}

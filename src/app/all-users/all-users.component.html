@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="conatainerBox">
+      <div class="header-row">
+        <div class="heading-text">All Users</div>
+        <div>
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="sortByFirstName()">First Name</button>
+              <button ngbDropdownItem (click)="sortByLastName()">Last Name</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div
+          class="card"
+          style="width: 17rem"
+          *ngFor="let user of userDetails"
+          [routerLink]="['/allusers/' + user.id]"
+        >
+          <img
+            class="card-img-top"
+            src="{{ user.avatar }}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">First name: {{ user.first_name }}</p>
+            <p class="card-text">Last name: {{ user.last_name }}</p>
+            <p class="card-text">Email {{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
